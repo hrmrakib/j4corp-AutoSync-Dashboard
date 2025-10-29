@@ -35,35 +35,18 @@ const chartData = {
 const StatCard = ({
   title,
   value,
-  icon: Icon,
-  change,
-  isNegative = false,
 }: {
   title: string;
   value: string;
-  icon: any;
   change?: string;
   isNegative?: boolean;
 }) => (
-  <Card className='bg-white border-0 shadow-lg'>
+  <Card className='min-w-[250px] max-w-max bg-[#DBEAFE] border-0 shadow-lg'>
     <CardContent className='p-'>
       <div className='flex items-center gap-4'>
-        <div className='p-3 bg-[#aaa3a34f] rounded-full'>
-          <Icon className='h-6 w-6 text-gray-600' />
-        </div>
         <div>
-          <p className='text-sm font-medium text-gray-600 mb-1'>{title}</p>
-          <p className='text-2xl font-bold text-gray-900'>{value}</p>
-          {change && (
-            <p
-              className={`text-xs mt-1 ${
-                isNegative ? "text-red-500" : "text-green-500"
-              }`}
-            >
-              {isNegative ? "-" : "+"}
-              {change} since last day
-            </p>
-          )}
+          <p className='text-base font-medium text-[#1C1C1C] mb-1'>{title}</p>
+          <p className='text-3xl font-bold text-gray-900'>{value}</p>
         </div>
       </div>
     </CardContent>
@@ -218,27 +201,14 @@ export default function Dashboard() {
       {/* Main Content */}
       <div className='py-8'>
         {/* Stats Cards */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8'>
-          <StatCard title='Total Revenue' value='$235.5' icon={BarChart3} />
-          <StatCard
-            title="Today's Revenue"
-            value='$235.5'
-            icon={BarChart3}
-            change='13%'
-            isNegative={true}
-          />
-          <StatCard title='Total User' value='230' icon={Users} />
-          <StatCard
-            title="Today's New User"
-            value='12'
-            icon={Users}
-            change='13%'
-            isNegative={true}
-          />
+        <div className='flex flex-col md:flex-row gap-6 mb-8'>
+          <StatCard title='Total Revenue' value='$235.5' />
+          <StatCard title="Today's Revenue" value='$235.5' />
+          <StatCard title='Total User' value='230' />
         </div>
 
         {/* Chart Section */}
-        <Card className=' bg-white border-0 shadow-sm'>
+        <Card className='bg-[#EFF6FF] border-0 shadow-sm'>
           <CardContent className='p-6'>
             <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6'>
               <div>

@@ -39,7 +39,7 @@ export default function RootLayout({
           >
             <AppSidebar />
             <main className='relative flex-1 min-h-screen w-full bg-body-bg'>
-              <SidebarTrigger className='text-black' />
+              <SidebarTrigger className='text-white' />
               <Header />
               {children}
             </main>

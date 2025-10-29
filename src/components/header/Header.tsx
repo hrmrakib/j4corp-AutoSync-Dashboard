@@ -25,14 +25,14 @@ const Header = () => {
     return null;
   }
   return (
-    <div className='bg-white border-b border-gray-200'>
+    <div className='bg-[#030712] border-b border-gray-200'>
       <div className='max-w-8xl mx-auto px-6'>
         <div className='flex items-center justify-between py-6'>
           <div>
-            <h1 className='text-2xl font-bold text-gray-900'>
+            <h1 className='text-2xl font-bold text-white'>
               Welcome, {admin?.name}
             </h1>
-            <p className='text-gray-600 mt-1'>Have a nice day</p>
+            <p className='text-gray-200 mt-1'>Have a nice day</p>
           </div>
           <div className='flex items-center gap-4'>
             <Button variant='ghost' size='icon' className='relative'>
@@ -45,10 +45,10 @@ const Header = () => {
                 <AvatarFallback>D</AvatarFallback>
               </Avatar>
               <div className='hidden sm:block'>
-                <p className='text-base font-medium text-[#333338]'>
+                <p className='text-base font-medium text-[#f7f7f7]'>
                   {admin?.name}
                 </p>
-                <p className='text-sm text-[#606060]'>{admin?.role}</p>
+                <p className='text-sm text-[#dfdfdf]'>{admin?.role}</p>
               </div>
             </div>
           </div>

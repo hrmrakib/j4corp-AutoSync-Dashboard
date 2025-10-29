@@ -205,7 +205,7 @@ function NavItem({ href, icon: Icon, label, active = true }: NavItemProps) {
             "flex items-center gap-3 px-4 !py-5 transition-colors rounded-full",
             active
               ? "bg-sidebar-link-bg text-sidebar-active-color"
-              : "text-sidebar-color hover:bg-sidebar-link-bg hover:text-[#fff]"
+              : "text-sidebar-color hover:bg-sidebar-link-bg hover:text-[#1D4ED8]"
           )}
         >
           <Icon size={18} />
