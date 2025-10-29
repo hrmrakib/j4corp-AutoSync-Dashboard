@@ -8,7 +8,6 @@ import { ArrowLeft, Lock, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Image from "next/image";
 
 export default function ResetPasswordPage() {
   const router = useRouter();
@@ -68,7 +67,9 @@ export default function ResetPasswordPage() {
   };
 
   return (
-    <div className='min-h-screen bg-orange-50 flex items-center justify-center p-4'>
+    <div className="min-h-screen bg-[url('/authBg.jpg')] bg-cover bg-center bg-no-repeat flex items-center justify-center">
+      <div className='absolute inset-0 top-0 left-0 w-full h-full bg-black opacity-30'></div>
+
       <div className='w-full max-w-md bg-white rounded-2xl shadow-lg p-8 relative'>
         {/* Back Button */}
         <button
@@ -78,19 +79,11 @@ export default function ResetPasswordPage() {
           <ArrowLeft className='w-5 h-5 text-gray-600' />
         </button>
 
-        {/* Logo */}
-        <div className='flex items-center justify-center text-center'>
-          <Image src='/logo.png' alt='Logo' width={200} height={200} />
-        </div>
-
         {/* Header */}
         <div className='text-center mb-8'>
           <h1 className='text-2xl font-bold text-gray-900 mb-2'>
-            Create New Password
+            Reset Password
           </h1>
-          <p className='text-gray-600 text-sm'>
-            Your password must be 8-10 character long
-          </p>
         </div>
 
         {/* Form */}
@@ -99,7 +92,7 @@ export default function ResetPasswordPage() {
           <div className='space-y-2'>
             <Label
               htmlFor='password'
-              className='text-sm font-medium text-gray-700'
+            className='text-lg font-medium text-[#030712]'
             >
               Password
             </Label>
@@ -136,7 +129,7 @@ export default function ResetPasswordPage() {
           <div className='space-y-2'>
             <Label
               htmlFor='confirmPassword'
-              className='text-sm font-medium text-gray-700'
+            className='text-lg font-medium text-[#030712]'
             >
               Confirm Password
             </Label>
@@ -177,7 +170,7 @@ export default function ResetPasswordPage() {
           <Button
             type='submit'
             disabled={isLoading}
-            className='w-full h-12 bg-orange-400 hover:bg-orange-500 text-white font-medium rounded-lg transition-colors'
+            className='w-full h-12 bg-[#030712] hover:bg-[#030712] text-white font-medium rounded-lg transition-colors'
           >
             {isLoading ? "Resetting Password..." : "Reset Password"}
           </Button>

@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input";
 import { ArrowLeft, Mail } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
@@ -54,7 +53,9 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className='min-h-screen bg-orange-50 flex items-center justify-center p-4'>
+    <div className="min-h-screen bg-[url('/authBg.jpg')] bg-cover bg-center bg-no-repeat flex items-center justify-center">
+      <div className='absolute inset-0 top-0 left-0 w-full h-full bg-black opacity-30'></div>
+
       <div className='w-full max-w-md'>
         <div className='bg-white rounded-2xl shadow-lg p-8 relative'>
           {/* Back Button */}
@@ -62,20 +63,15 @@ export default function ForgotPasswordPage() {
             onClick={() => router.back()}
             className='absolute top-6 left-6 p-2 hover:bg-gray-100 rounded-full transition-colors'
           >
-            <ArrowLeft className='w-5 h-5 text-gray-600' />
+            <ArrowLeft className='w-5 h-5 text-[#030712]' />
           </button>
-
-          {/* Logo */}
-          <div className='flex items-center justify-center text-center'>
-            <Image src='/logo.png' alt='Logo' width={200} height={200} />
-          </div>
 
           {/* Header */}
           <div className='text-center mb-8'>
-            <h1 className='text-2xl font-bold text-gray-900 mb-2'>
+            <h1 className='text-2xl font-bold text-[#030712] mb-2'>
               Forget Password
             </h1>
-            <p className='text-gray-600 text-sm'>
+            <p className='text-[#030712] text-sm'>
               Please enter your email address to reset your account password.
             </p>
           </div>
@@ -86,7 +82,7 @@ export default function ForgotPasswordPage() {
             <div>
               <label
                 htmlFor='email'
-                className='block text-sm font-medium text-gray-700 mb-2'
+                className='block text-sm font-medium text-[#030712] mb-2'
               >
                 Email Address
               </label>
@@ -103,7 +99,7 @@ export default function ForgotPasswordPage() {
                     }
                   }}
                   placeholder='Enter your email'
-                  className={`pl-10 h-12 bg-gray-50 border-gray-200 focus:border-orange-400 focus:ring-orange-400 ${
+                  className={`pl-10 h-12 bg-gray-50 border-gray-200 focus:border-[#030712] focus:ring-[#030712] ${
                     errors.email
                       ? "border-red-500 focus:border-red-500 focus:ring-red-500"
                       : ""
@@ -119,7 +115,7 @@ export default function ForgotPasswordPage() {
             {/* Submit Button */}
             <Button
               type='submit'
-              className='w-full h-12 bg-orange-400 hover:bg-orange-500 text-white font-medium rounded-lg transition-colors'
+              className='w-full h-12 bg-[#030712] hover:bg-[#030712] text-white font-medium rounded-lg transition-colors'
               disabled={isLoading}
             >
               {isLoading ? "Sending..." : "Send OTP"}
@@ -128,11 +124,11 @@ export default function ForgotPasswordPage() {
 
           {/* Sign In Link */}
           <div className='text-center mt-6'>
-            <p className='text-gray-600 text-sm'>
+            <p className='text-[#030712] text-sm'>
               Already have an account?{" "}
               <Link
-                href='/auth/signin'
-                className='text-orange-400 hover:text-orange-500 font-medium transition-colors'
+                href='/signin'
+                className='text-[#030712] hover:text-[#030712] font-medium transition-colors'
               >
                 Sign in
               </Link>

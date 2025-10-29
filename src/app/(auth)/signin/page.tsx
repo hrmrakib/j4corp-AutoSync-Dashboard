@@ -9,7 +9,6 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function SignInPage() {
   const [formData, setFormData] = useState({
@@ -63,20 +62,16 @@ export default function SignInPage() {
   };
 
   return (
-    <div className='min-h-screen bg-orange-50 flex items-center justify-center p-4'>
-      <Card className='w-full max-w-xl bg-white shadow-lg border-0'>
-        <CardContent className='pb-8'>
-          {/* Logo */}
-          <div className='flex items-center justify-center text-center'>
-            <Image src='/logo.png' alt='Logo' width={200} height={200} />
-          </div>
+    <div className="min-h-screen bg-[url('/authBg.jpg')] bg-cover bg-center bg-no-repeat flex items-center justify-center">
+      <div className='absolute inset-0 top-0 left-0 w-full h-full bg-black opacity-30'></div>
 
+      <Card className='relative w-full max-w-md bg-white shadow-lg border-0'>
+        <CardContent className='pb-8'>
           {/* Header */}
           <div className='text-center mb-8'>
-            <h1 className='text-2xl font-bold text-gray-900 mb-2'>Sign in</h1>
-            <p className='text-gray-600 text-sm leading-relaxed'>
-              Enter your email address and password to access your account.
-            </p>
+            <h1 className='text-5xl font-medium text-[#4B5563] mb-2'>
+              Sign in
+            </h1>
           </div>
 
           {/* Form */}
@@ -95,7 +90,7 @@ export default function SignInPage() {
                   placeholder='Enter your email'
                   value={formData.email}
                   onChange={handleInputChange}
-                  className={`pl-10 bg-gray-50 border-gray-200 focus:bg-white ${
+                  className={`pl-10 h-12 bg-gray-50 border-gray-200 focus:bg-white ${
                     errors.email ? "border-red-500" : ""
                   }`}
                 />
@@ -116,10 +111,10 @@ export default function SignInPage() {
                   id='password'
                   name='password'
                   type={showPassword ? "text" : "password"}
-                  placeholder='Min 8 character'
+                  placeholder='Min 6 character'
                   value={formData.password}
                   onChange={handleInputChange}
-                  className={`pl-10 pr-10 bg-gray-50 border-gray-200 focus:bg-white ${
+                  className={`pl-10 h-12 pr-10 bg-gray-50 border-gray-200 focus:bg-white ${
                     errors.password ? "border-red-500" : ""
                   }`}
                 />
@@ -143,8 +138,8 @@ export default function SignInPage() {
             {/* Forgot Password Link */}
             <div className='text-right'>
               <Link
-                href='/auth/forgot-password'
-                className='text-orange-500 text-sm hover:text-orange-600 transition-colors'
+                href='/forgot-password'
+                className='text-[#030712] text-sm hover:text-[#030712] transition-colors'
               >
                 Forgot password?
               </Link>
@@ -154,33 +149,10 @@ export default function SignInPage() {
             <Button
               type='submit'
               disabled={isLoading}
-              className='w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 rounded-lg transition-colors'
+              className='w-full h-12 bg-[#030712] hover:bg-[#030712] text-white font-medium py-3 rounded-lg transition-colors'
             >
               {isLoading ? "Signing In..." : "Sign in"}
             </Button>
-
-            {/* Divider */}
-            <div className='relative my-6'>
-              <div className='absolute inset-0 flex items-center'>
-                <div className='w-full border-t border-gray-200' />
-              </div>
-              <div className='relative flex justify-center text-sm'>
-                <span className='px-4 bg-white text-gray-500'>Or</span>
-              </div>
-            </div>
-
-            {/* Sign Up Link */}
-            <div className='text-center'>
-              <span className='text-gray-600 text-sm'>
-                Don&apos;t have an account?{" "}
-                <Link
-                  href='/auth/signup'
-                  className='text-orange-500 hover:text-orange-600 font-medium transition-colors'
-                >
-                  Sign up
-                </Link>
-              </span>
-            </div>
           </form>
         </CardContent>
       </Card>
