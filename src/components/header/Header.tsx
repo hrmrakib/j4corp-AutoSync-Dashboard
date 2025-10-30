@@ -25,7 +25,7 @@ const Header = () => {
     return null;
   }
   return (
-    <div className='sticky top-0 z-50 bg-[#030712] border-b border-gray-200'>
+    <div className='z-50 bg-[#030712] border-b border-gray-200'>
       <div className='max-w-8xl mx-auto px-6'>
         <div className='flex items-center justify-between py-6'>
           <div>

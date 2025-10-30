@@ -350,7 +350,7 @@ export default function MessagesPage() {
           </div>
 
           {/* Message Input */}
-          <div className='p-4 border-t border-border bg-[#F8F9FD]'>
+          <div className='sticky bottom-0 p-4 border-t border-border bg-[#F8F9FD]'>
             <div className='flex items-end gap-2'>
               <Input
                 placeholder='Type your message here ...'
