@@ -47,15 +47,15 @@ export default function DashboardSidebar() {
           <SidebarContent>
             <Link
               href='/'
-              className='flex items-center justify-center gap-2 px-3 py-3'
+              className='h-32 flex items-center justify-center gap-2 px-3 py-3'
             >
-              <Image
+              {/* <Image
                 src='/logo.png'
                 alt='logo'
                 width={140}
                 height={140}
                 className=''
-              />
+              /> */}
             </Link>
 
             <SidebarMenu className='px-6 space-y-2'>
@@ -67,62 +67,36 @@ export default function DashboardSidebar() {
               />
 
               <NavItem
-                href='/user-management'
+                href='/user'
                 icon={Users}
-                label='User Management'
+                label='User '
+                active={pathname === "/user" || pathname.startsWith("/user")}
+              />
+
+              <NavItem
+                href='/inbox'
+                icon={Settings}
+                label='Inbox'
+                active={pathname === "/inbox" || pathname.startsWith("/inbox/")}
+              />
+
+              <NavItem
+                href='/appointment'
+                icon={Settings}
+                label='Appointment'
                 active={
-                  pathname === "/user-management" ||
-                  pathname.startsWith("/user-management")
+                  pathname === "/appointment" ||
+                  pathname.startsWith("/appointment/")
                 }
               />
 
               <NavItem
-                href='/administrators'
+                href='/sell-request'
                 icon={Settings}
-                label='Administrators'
+                label='Sell Request'
                 active={
-                  pathname === "/administrators" ||
-                  pathname.startsWith("/administrators/")
-                }
-              />
-
-              <NavItem
-                href='/subscribers'
-                icon={Settings}
-                label='Subscriber'
-                active={
-                  pathname === "/subscribers" ||
-                  pathname.startsWith("/subscribers/")
-                }
-              />
-
-              <NavItem
-                href='/spiral-management'
-                icon={Settings}
-                label='Spiral Management'
-                active={
-                  pathname === "/spiral-management" ||
-                  pathname.startsWith("/spiral-management/")
-                }
-              />
-
-              <NavItem
-                href='/voice-drop-library'
-                icon={Settings}
-                label='Voice Drop Library'
-                active={
-                  pathname === "/voice-drop-library" ||
-                  pathname.startsWith("/voice-drop-library/")
-                }
-              />
-
-              <NavItem
-                href='/journal-pro-manager'
-                icon={Settings}
-                label='Journal Pro. Manager'
-                active={
-                  pathname === "/journal-pro-manager" ||
-                  pathname.startsWith("/journal-pro-manager/")
+                  pathname === "/sell-request" ||
+                  pathname.startsWith("/sell-request/")
                 }
               />
 
