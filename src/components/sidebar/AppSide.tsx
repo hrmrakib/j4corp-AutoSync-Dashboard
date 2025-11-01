@@ -101,11 +101,11 @@ export default function DashboardSidebar() {
               />
 
               <NavItem
-                href='/settings'
+                href='/setting'
                 icon={Settings}
                 label='Setting'
                 active={
-                  pathname === "/settings" || pathname.startsWith("/settings/")
+                  pathname === "/setting" || pathname.startsWith("/setting/")
                 }
               />
             </SidebarMenu>

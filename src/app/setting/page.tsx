@@ -13,7 +13,7 @@ export default function SettingsPage() {
   ];
 
   return (
-    <div className='flex min-h-screen bg-gray-50 p-6'>
+    <div className='flex min-h-screen bg-transparent p-6'>
       <div className='flex-1 w-full'>
         <main className='w-full p-4 md:p-6'>
           <div className='max-w-3xl mx-auto'>
@@ -27,9 +27,9 @@ export default function SettingsPage() {
                 <Link
                   key={index}
                   href={link.href}
-                  className='flex items-center justify-between p-4 border border-[#760C2A] rounded-md hover:bg-gray-50 transition-colors'
+                  className='flex items-center justify-between p-4 border border-[#760C2A] rounded-md hover:bg-gray-900 transition-colors'
                 >
-                  <span className='text-primary text-lg'>{link.title}</span>
+                  <span className='text-white text-lg'>{link.title}</span>
                   <ChevronRight className='h-5 w-5 text-gray-400' />
                 </Link>
               ))}

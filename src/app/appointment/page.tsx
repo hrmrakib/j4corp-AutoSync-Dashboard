@@ -19,9 +19,10 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import Image from "next/image";
+import AppointmentCalender from "@/components/AppointmentCalender";
 
 // Mock data matching the design
-const mockUsers = Array.from({ length: 60 }, (_, i) => ({
+const mockUsers = Array.from({ length: 160 }, (_, i) => ({
   id: i + 1,
   slNo: "#BI00001",
   name: "Hazel Janis",
@@ -40,6 +41,7 @@ export default function UserListPage() {
   const [selectedUser, setSelectedUser] = useState<
     (typeof mockUsers)[0] | null
   >(null);
+
   const itemsPerPage = 10;
 
   // Filter users based on search term
@@ -96,19 +98,24 @@ export default function UserListPage() {
       <div className='w-full rounded-lg bg-[#EFF6FF] shadow'>
         {/* Header */}
         <div className='mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between py-5  m-6'>
-          <h1 className='text-2xl font-semibold text-gray-700'>User List</h1>
-          <div className='relative w-full sm:w-80 bg-[#E0E0E0] rounded-xl'>
-            <Search className='absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400' />
-            <Input
-              type='text'
-              placeholder='Search'
-              value={searchTerm}
-              onChange={(e) => {
-                setSearchTerm(e.target.value);
-                setCurrentPage(1);
-              }}
-              className='pl-10 text-black'
-            />
+          <h1 className='text-2xl font-semibold text-gray-700'>Appointments</h1>
+          <div className='flex items-center gap-4'>
+            <div className='relative w-full sm:w-80 bg-[#E0E0E0] rounded-xl'>
+              <Search className='absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400' />
+              <Input
+                type='text'
+                placeholder='Search'
+                value={searchTerm}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  setCurrentPage(1);
+                }}
+                className='pl-10 text-black'
+              />
+            </div>
+            <>
+              <AppointmentCalender />
+            </>
           </div>
         </div>
 
@@ -123,16 +130,16 @@ export default function UserListPage() {
                     Name
                   </th>
                   <th className='px-6 py-4 text-left text-sm font-medium text-table-header-color'>
-                    Email
+                    Make
                   </th>
                   <th className='px-6 py-4 text-left text-sm font-medium text-table-header-color'>
-                    Phone
+                    Model
                   </th>
                   <th className='px-6 py-4 text-left text-sm font-medium text-table-header-color'>
-                    Address
+                    Location
                   </th>
                   <th className='px-6 py-4 text-left text-sm font-medium text-table-header-color'>
-                    Zip Code
+                    Date
                   </th>
                   <th className='px-6 py-4 text-left text-sm font-medium text-table-header-color'>
                     Action
@@ -155,7 +162,7 @@ export default function UserListPage() {
                       Dhaka
                     </td>
                     <td className='px-6 py-4 text-base text-table-color font-medium'>
-                      1550
+                      01/01/2023
                     </td>
                     <td className='px-6 py-4'>
                       <Button
@@ -256,7 +263,7 @@ export default function UserListPage() {
                   onClick={() => setCurrentPage(page as number)}
                   className={`h-8 w-8 p-0 ${
                     currentPage === page
-                      ? "bg-orange-400 text-white hover:bg-orange-500"
+                      ? "bg-[#257bdd] text-white hover:bg-[#257bdd]/90"
                       : "hover:bg-gray-100"
                   }`}
                 >
